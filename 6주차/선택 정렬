@@ -1,0 +1,40 @@
+#include <stdio.h>
+void selecta(int arr[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        int max_idx = i; // 최댓값의 위치를 저장할 변수 (i로 초기화)
+        
+        // i 이후의 요소들 중 가장 큰 값을 가진 인덱스를 찾음
+        for (int j = i + 1; j < n; j++) {
+            if (arr[j] > arr[max_idx]) {
+                max_idx = j;
+            }
+        }
+        
+        // 찾은 최댓값의 위치(max_idx)와 현재 위치(i)의 값을 교환
+        if (max_idx != i) {
+            int temp = arr[i];
+            arr[i] = arr[max_idx];
+            arr[max_idx] = temp;
+        }
+    }
+}
+int main() {
+    int arr[] = {7,4,5,1,3};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    printf("초기 상태 배열 : [");
+    for (int i = 0 ; i < n;i++) {
+        printf("%d ",arr[i]);
+    }
+    printf("]\n");
+
+    selecta(arr,n);
+
+    printf("선택 정렬 배열 : [");
+    for (int i = 0; i < n;i++ ) {
+        printf("%d ",arr[i]);
+    }
+    printf("]");
+
+    return 0;
+}

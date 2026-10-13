@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+#define STUDENT 50
+
+void sort_b(int arr[],int size) {
+    int temp;
+    for(int i = 0;i < size - 1;i++) {
+        for(int j = 0;j < size - 1 - i;j++) {
+            if(arr[j] > arr[j+1]) {
+                temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+}
+
+int main() {
+    int person;
+    printf("학생 수를 입력 : ");
+    scanf("%d",&person);
+    if(person < 1 || person > STUDENT) {
+        printf("범위 외");
+        return 0;
+    }
+    int scores[person];
+    for(int i = 0 ; i < person;i++) {
+        printf("학생 성적을 입력: ");
+        scanf("%d",&scores[i]);
+    }
+    int size = sizeof(scores) / sizeof(scores[0]);
+    int *Start = scores;
+    sort_b(scores,size); // 포인터 변수를 사용하는 법을 모르겠어요
+
+
+    printf("정렬된 성적: [ ");
+    for (int i = 0; i < person;i++) {
+        printf("%d ",scores[i]);
+    }
+    printf("]\n");
+    printf("최고 성적: %d, 최소 성적 : %d",scores[person-1],scores[0]);
+    
+    return 0;
+}

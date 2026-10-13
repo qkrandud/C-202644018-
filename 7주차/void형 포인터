@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+void printValue(void* ptr,char type) {
+    switch(type) {
+        case 'i':printf("%d\n",*(int*)ptr);break;
+        case 'f':printf("%.5f\n",*(float*)ptr);break;
+        case 'c':printf("%c\n",*(char*)ptr);break;
+    }
+}
+
+int main() {
+    int num = 23;
+    float num1 = 4.5;
+    char c = 'z';
+
+    printValue(&num,'i');
+    printValue(&num1,'f');
+    printValue(&c,'c');
+
+    return 0;
+}

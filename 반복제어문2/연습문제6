@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main()
+{
+    float sum = 0;
+    float avg = 0;
+    int cnt = 0;
+
+    for (int i = 0; i < 5; i++)
+    {
+        int num;
+        scanf("%d", &num);
+        sum += num;
+        cnt++;
+    }
+    avg = sum / cnt;
+    printf("sum : %.0f\navg : %.1f", sum, avg);
+    return 0;
+}

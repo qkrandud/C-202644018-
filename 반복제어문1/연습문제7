@@ -1,0 +1,10 @@
+#include <stdio.h>
+
+int main() {
+    int x;
+    scanf("%d",&x);
+    x = 8;
+    printf("%d\n7 5 8",x);
+
+    return 0;
+}

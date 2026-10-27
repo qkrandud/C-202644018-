@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    int a,b,c;
+    scanf("%d",&a);
+    scanf("%d",&b);
+    scanf("%d",&c);
+    int max;
+    if(a > b && a > c) {
+        max = a;
+    }
+    else if(b > a && b > c) {
+        max = b;
+    }
+    else if(c > b && c > a) {
+        max = c;
+    }
+    printf("max = %d",max);
+
+    return 0;
+}

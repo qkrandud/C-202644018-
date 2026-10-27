@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int num;
+    for(int i = 0;i < 1;i--) {
+        printf("1. Korea\n2.USA\n3.Japan\n4.China\n");
+        printf("number? ");
+        scanf("%d",&num);
+        printf("\n\n");
+        if(num == 1) {
+            printf("Seoul\n\n");
+        }
+        else if(num == 2) {
+            printf("Washington, D.C.\n\n");
+        }
+        else if(num == 3) {
+            printf("Tokyo\n\n");
+        }
+        else if(num == 4) {
+            printf("Beijing\n\n");
+        }
+        else {
+            printf("none");
+            return 0;
+        }
+    }
+}

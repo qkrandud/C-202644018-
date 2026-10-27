@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int num;
+    int small = 0;
+    int large = 0;
+    scanf("%d",&num);
+
+    while(num < 100) {
+        if(num >= 50) {
+            large++;
+        }
+        else {
+            small++;
+        }
+        scanf("%d",&num);
+    }
+    large++;
+    printf("small : %d\nlarge : %d", small,large);
+
+    return 0;
+}

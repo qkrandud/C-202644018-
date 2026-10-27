@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int num;
+    scanf("%d",&num);
+    int max;
+    int min = 1000;
+
+    while(num != 0) {
+        if (num >= 1 && num <= 100) {
+            if(max < num) {
+                max = num;
+            }
+            else if (min > num) {
+                min = num;
+            }
+        }
+        scanf("%d",&num);
+    }
+    printf("MAX = %d\nMIN = %d", max,min);
+
+    return 0;
+}

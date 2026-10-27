@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+    int cm;
+    int kg;
+    scanf("%d",&cm);
+    scanf("%d",&kg);
+    printf("%d\n",kg + 100 - cm);
+
+    if(kg + 100 - cm > 0) {
+        printf("Obesity\n");
+        printf("Need control");
+    }
+
+    return 0;
+}

@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str1[20] = "back";
+    char str2[20] = "space";
+    char str3[20];
+    char ch = 'p';
+    int n = 3;
+
+    //str1의 길이를 구하기 위해서 strlen()함수가 당도했다!?
+    printf("%d\n",strlen(str1));
+
+    // str1의 내용을 복사해서 str3에다가 넣고싶어!!
+    printf("%s\n",strcpy(str3,str1)); // strcpy(복사한 내용을 넣을려는 변수명, 복사할 변수명)
+
+    // str2의 일부 문자만 복사해서 str3에다가 넣을거야!!
+    printf("%s\n",strncpy(str3,str2,n));    // 시작 주소의 문자부터 n개의 문자를 복사해서 str3에다가 집어넣겠어
+    str3[n] = '\0'; // n개의 문자를 집어넣다면 끝에 인덱스는 n-1일일테니 n 인덱스에 널문자를 추가해야겠다
+    return 0;
+}

@@ -17,5 +17,23 @@ int main() {
     // str2의 일부 문자만 복사해서 str3에다가 넣을거야!!
     printf("%s\n",strncpy(str3,str2,n));    // 시작 주소의 문자부터 n개의 문자를 복사해서 str3에다가 집어넣겠어
     str3[n] = '\0'; // n개의 문자를 집어넣다면 끝에 인덱스는 n-1일일테니 n 인덱스에 널문자를 추가해야겠다
+
+    // str1과 str2의 문자열을 비교해보겠어
+    printf("%d\n",strcmp(str1,str2));
+
+    // str1과 str2의 첫 n개의 문자열들을 비교하겠어
+    printf("%d\n",strncmp(str1,str2,n));
+
+    // str1과 str2를 연결해보아야겠다
+    printf("%s\n",strcat(str1,str2));
+
+    // str1의 첫 n개의 문자와 str3의 문자열을 연결해보자
+    printf("%s\n",strncat(str3,str1,n));
+
+    // str1의 문자 p가 가장 먼저 나와있는 p
+    printf("%s\n",strchr(str1,ch)); // strchr(문자열 변수명,문자 변수명 또는 문자)
+
+    // str1에서 str2 문자열이 나오는 첫번째가 무엇일까나
+    printf("%s\n",strstr(str1,str2));  // strstr(문자열 변수명,문자열 변수명 또는 문자열);
     return 0;
 }

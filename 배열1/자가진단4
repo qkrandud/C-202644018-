@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main()
+{
+    float arr[] = {0.0, 85.6, 79.5, 83.1, 80.0, 78.2, 75.0};
+    int one, two;
+
+    scanf("%d", &one);
+    scanf("%d", &two);
+
+    printf("%.1f", arr[one] + arr[two]);
+
+    return 0;
+}

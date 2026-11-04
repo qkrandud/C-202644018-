@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main()
+{
+    int month[12] = {0};
+
+    for (int i = 0; i < 12; i++)
+    {
+        scanf("%d", &month[i]);
+
+        if (month[i] < 1 || month[i] > 12)
+        {
+            return 0;
+        }
+        switch (month[i])
+        {
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            printf("%d\n", 30);
+            break;
+        case 2:
+            printf("%d\n", 28);
+            break;
+        default:
+        {
+            printf("%d\n", 31);
+        }
+        }
+    }
+    return 0;
+}

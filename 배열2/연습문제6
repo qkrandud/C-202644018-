@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main()
+{
+    int arr[3][3] = {{95, 100, 88}, {85, 60, 93}, {66, 99, 88}};
+    for (int i = 0; i < 3; i++)
+    {
+        int sum = 0;
+        for (int j = 0; j < 3; j++)
+        {
+            printf("%d ", arr[i][j]);
+            sum += arr[i][j];
+        }
+        printf("%d\n", sum);
+    }
+    int sumaximum = 0;
+    for (int i = 0; i < 3; i++)
+    {
+        int sumax = 0;
+        for (int j = 0; j < 3; j++)
+        {
+            sumax += arr[j][i];
+        }
+        printf("%d ", sumax);
+        sumaximum += sumax;
+    }
+    printf("%d", sumaximum);
+
+    return 0;
+}

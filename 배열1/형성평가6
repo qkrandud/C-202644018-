@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main()
+{
+    int arr[100] = {0};
+    int multi = 0;
+    float avg = 0.0;
+    for (int i = 0; i < 100; i++)
+    {
+        scanf("%d", &arr[i]);
+        if (arr[i] == 0)
+        {
+            break;
+        }
+        else if (arr[i] % 5 == 0)
+        {
+            multi++;
+            avg += arr[i];
+        }
+    }
+    printf("Multiples of 5 : %d\nsum : %.0f\navg : %.1f", multi, avg, avg / multi);
+    return 0;
+}

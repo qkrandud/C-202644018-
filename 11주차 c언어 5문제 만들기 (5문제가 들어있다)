@@ -1,0 +1,113 @@
+#include <stdio.h>
+
+union Data {
+    int i;
+    char bytes[4];
+};
+
+int main(void) {
+    union Data d;
+
+    d.i = 0x12345678;
+
+    printf("정수로 읽기: 0x%X\n", d.i);
+    printf("첫 번째 바이트만 읽기: 0x%X\n", (unsigned char)d.bytes[0]);
+    printf("전체 크기: %zu 바이트\n", sizeof(d));
+
+    return 0;
+}
+
+Q1.이 코드에서 쓰인 사용자 정의 자료형이 뭔지,그리고 그 자료형의 특징을 서술하시오.
+
+	예상 정답 : 공용체, 여러 가지 자료형을 같은 메모리 위치에 저장한다
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+
+struct Student {
+    int id;
+    int score;
+};
+
+int main(void) {
+    struct Student s = {202601, 95};
+    struct Student *ptr = &s;
+
+    printf("학번: %d\n", [ 빈칸 1 ]);
+    printf("점수: %d\n", [ 빈칸 2 ]);
+
+    return 0;
+}
+
+Q2. 위 코드의 [ 빈칸 1 ]과 [ 빈칸 2 ]에 들어갈 알맞은 코드를 작성하시오.
+	정답 : ptr->id,ptr->score
+
+
+
+
+
+
+
+#include <stdio.h>
+
+int main(void) {
+    char *str = "hello";
+    str[0] = 'w';
+
+    printf("%s\n", str);
+    return 0;
+}
+
+Q3. 위 코드의 출력 결과가 어떤지, 아니면 출력의 오류가 나는지, 출력의 오류가 났으면 컴파일 타임 에러 검출이 될수 있게 어떻게 수정할지 서술하시오
+	정답 : 문자열 상수는 대부분 프로그램의 읽기 전용 메모리에 있기에 런타임 오류가 발생하기에 오류가 난다, char *str 앞에 const를 넣어서
+			바뀌면 안되는 변수로 선언하여 컴파일에서 에러가 검출되도록 한다
+
+
+
+
+
+
+
+Q4. 열거형의 특징에 알맞는 것은?       (4번)
+1.별도의 값이 지정되지 않아도 아스키코드 형식으로 1씩 증가한다
+2.열거형 상수들을 관리하기는 어렵지만 읽기에는 쉽다
+3.선언으로는 nume를 사용한다
+4.한눈에 들어오기 좋고 오류를 줄여준다
+5.switch문과는 쓰기가 좋지 않다 
+
+
+
+
+
+
+
+#include <stdio.h>
+
+struct Person {
+    char name[20];
+    int age;
+};
+
+void printPerson(struct Person p) {
+    printf("이름: %s, 나이: %d\n", p.name, p.age);
+}
+
+int main(void) {
+    struct Person person1 = {"홍길동", 20};
+    printPerson(&person1);
+
+    return 0;
+}
+Q5. 이 코드에서 오류가 발생하는 부분을 찾아 올바르게 수정하시오
+	
+	예상 정답 : void printPerson(struct Person *p) {
+    printf("이름: %s, 나이: %d\n", p->name, p->age);
+}

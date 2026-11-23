@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+
+struct Person
+{
+    char name[21];
+    int cm;
+};
+
+int main()
+{
+    struct Person person[5] = {{"",0},{"",0},{"",0},{"",0},{"",0}};
+    int min_cm = 1000;
+    char min_name[21] = "";
+    
+    for(int i = 0; i < 5;i++) {
+        scanf("%20s %d", person[i].name, &person[i].cm);
+        if (person[i].cm < min_cm) {
+            min_cm = person[i].cm;
+            strcpy(min_name, person[i].name);
+        }
+    }
+    printf("%s %d\n", min_name, min_cm);
+    return 0;
+}

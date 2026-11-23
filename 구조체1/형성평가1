@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+struct infom
+{
+    char name[101];
+    char tel[101];
+    char addr[101];
+};
+
+int main()
+{
+    struct infom info;
+    scanf("%100s %100s %100s", info.name, info.tel, info.addr);
+    printf("name : %s\n", info.name);
+    printf("tel : %s\n", info.tel);
+    printf("addr : %s\n", info.addr);
+    return 0;
+}

@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+struct Person
+{
+    char name[21];
+    int cm;
+};
+
+int main()
+{
+    struct Person person;
+    
+    for(int i = 0; i < 3; i++) {
+        scanf("%20s %d", person.name, &person.cm);
+        printf("%s : %dcm\n", person.name, person.cm);
+    }
+    return 0;
+}

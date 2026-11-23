@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <string.h>
+
+struct infom
+{
+    char name[101];
+    char tel[101];
+    char addr[101];
+};
+
+int main()
+{
+    struct infom info[3] = {{"", "", ""}, {"", "", ""}, {"", "", ""}};
+
+    for(int i = 0; i < 3;i++) {
+        scanf("%100s %100s %100s", info[i].name, info[i].tel, info[i].addr);
+    }
+    for(int i = 0; i < 3 - 1;i++) {
+        for(int j = 0; j < 3 - i - 1;j++) {
+            if(strcmp(info[j].name, info[j + 1].name) > 0) {
+                struct infom temp = info[j];
+                info[j] = info[j + 1];
+                info[j + 1] = temp;
+            }
+        }
+    }
+    printf("name : %s\n", info[0].name);
+    printf("tel : %s\n", info[0].tel);
+    printf("addr : %s\n", info[0].addr);
+    return 0;
+}
